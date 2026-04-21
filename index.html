@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO PRINCIPAL -->
+    <title>
+      Desenvolvimento de Sites Profissionais em São Paulo | Carol Gonzaga
+    </title>
+
+    <meta
+      name="description"
+      content="Criação de sites profissionais, landing pages e e-commerces focados em conversão. Desenvolvedora Full Stack em São Paulo. Transforme seu site em uma máquina de clientes."
+    />
+
+    <meta
+      name="keywords"
+      content="criar site profissional, desenvolvimento web São Paulo, landing page, site institucional, ecommerce, desenvolvedor full stack"
+    />
+
+    <meta name="author" content="Carol Gonzaga" />
+
+    <!-- INDEXAÇÃO -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.carolgonzaga.click/" />
+
+    <!-- OPEN GRAPH -->
+    <meta
+      property="og:title"
+      content="Desenvolvimento de Sites Profissionais | Carol Gonzaga"
+    />
+    <meta
+      property="og:description"
+      content="Sites estratégicos que geram clientes. Landing pages, institucionais e e-commerces com foco em conversão."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.carolgonzaga.click/" />
+    <meta
+      property="og:image"
+      content="https://www.carolgonzaga.click/img/preview.jpg"
+    />
+
+    <!-- FAVICON (adicione se tiver) -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- PERFORMANCE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- FONTES -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- SCHEMA JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carol Gonzaga",
+        "url": "https://www.carolgonzaga.click/",
+        "jobTitle": "Desenvolvedora Web Full Stack",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Paulo",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/anacquesta/",
+          "https://github.com/CarolGonzaga"
+        ],
+        "knowsAbout": [
+          "Desenvolvimento Web",
+          "Landing Pages",
+          "SEO",
+          "UX Design",
+          "E-commerce"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ==============================
+         NAVBAR
+    ============================== -->
+    <nav id="navbar" role="navigation" aria-label="Menu principal">
+      <div class="container nav-inner">
+        <a href="#hero" class="nav-logo">Carol<span>Gonzaga</span></a>
+        <ul class="nav-links" role="list">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como Funciona</a></li>
+          <li>
+            <a
+              href="#portfolio"
+              title="Ver projetos de desenvolvimento de sites profissionais"
+              >Portfólio</a
+            >
+          </li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="#contato" class="btn btn-primary nav-cta">
+          Quero um site que gere resultados
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <button
+          class="nav-hamburger"
+          id="hamburger"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <button class="nav-mobile-close" id="navClose" aria-label="Fechar menu">
+        &times;
+      </button>
+      <a href="#servicos" onclick="closeMenu()">Serviços</a>
+      <a href="#como-funciona" onclick="closeMenu()">Como Funciona</a>
+      <a
+        href="#portfolio"
+        onclick="closeMenu()"
+        title="Ver projetos de desenvolvimento de sites profissionais"
+        >Portfólio</a
+      >
+      <a href="#depoimentos" onclick="closeMenu()">Depoimentos</a>
+      <a href="#contato" onclick="closeMenu()">Contato</a>
+    </div>
+
+    <!-- ==============================
+         1. HERO
+    ============================== -->
+    <section id="hero" aria-label="Apresentação">
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">Desenvolvimento Web Estratégico</div>
+          <h1 class="hero-title">
+            Seu site deve gerar clientes
+            <em>não apenas existir</em>
+          </h1>
+          <p class="hero-sub">
+            Desenvolvo sites profissionais, landing pages e e-commerces com foco
+            em performance, experiência do usuário e conversão. Cada projeto é
+            estruturado para transformar visitas em oportunidades reais de
+            negócio.
+          </p>
+          <p class="hero-autoridade reveal reveal-delay-2">
+            Analista de Sistemas · Pós-graduada em Desenvolvimento Full Stack
+          </p>
+          <div class="hero-stats reveal reveal-delay-4">
+            <div>
+              <div class="hero-stat-num">60<span>+</span></div>
+              <div class="hero-stat-label">Projetos entregues</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">5<span>★</span></div>
+              <div class="hero-stat-label">Avaliação média</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">100<span>%</span></div>
+              <div class="hero-stat-label">Foco em conversão</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap reveal reveal-delay-2">
+          <div class="hero-photo-ring" aria-hidden="true"></div>
+          <div class="hero-photo-frame">
+            <img
+              src="img/carol3.jpg"
+              alt="Carol Gonzaga desenvolvedora web full stack em São Paulo especializada em criação de sites profissionais"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
+          </div>
+          <div class="hero-photo-chip hero-chip-1">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+              />
+            </svg>
+            Design premium
+          </div>
+          <div class="hero-photo-chip hero-chip-2">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+            Alta conversão
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         2. PROBLEMA
+    ============================== -->
+    <section id="problema" aria-label="O problema">
+      <div class="container problema-inner">
+        <div class="problema-left">
+          <div class="section-label reveal">O problema</div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Se o seu site não gera resultado, ele está te fazendo
+            <em>perder dinheiro</em>
+          </h2>
+          <div class="problema-texto reveal reveal-delay-2">
+            <p>
+              Muitos negócios investem em um site bonito,
+              <strong>mas sem estratégia.</strong><br />
+              Resultado: poucas visitas qualificadas, baixa conversão e nenhuma
+              previsibilidade de crescimento.
+            </p>
+            <p>
+              Um site eficiente precisa ir além do visual. Ele precisa
+              <strong
+                >guiar o usuário, gerar confiança e facilitar a decisão de
+                compra.</strong
+              >
+            </p>
+            <div class="problema-solucao">
+              <p>É exatamente isso que eu construo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="problema-cards reveal reveal-delay-2">
+          <div class="problema-card">
+            <div class="problema-card-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <div class="problema-card-text">
+              <h5>Site bonito, mas sem visitas qualificadas</h5>
+              <p>
+                Aparência não resolve o problema de tráfego. Sem estrutura
+                estratégica, o site fica invisível para quem importa.
+              </p>
+            </div>
+          </div>
+          <div class="problema-card">
+            <div class="problema-card-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <div class="problema-card-text">
+              <h5>Tráfego sem conversão</h5>
+              <p>
+                Visitantes chegam, mas não entram em contato. Falta uma jornada
+                clara que guie o usuário até a ação desejada.
+              </p>
+            </div>
+          </div>
+          <div class="problema-card">
+            <div class="problema-card-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="problema-card-text">
+              <h5>Nenhuma previsibilidade de crescimento</h5>
+              <p>
+                Sem dados, sem métricas, sem estratégia. Um site sem estrutura
+                não escala, ele apenas ocupa espaço online.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         3. SERVIÇOS
+    ============================== -->
+    <section id="servicos" aria-label="Serviços">
+      <div class="container">
+        <div class="servicos-header reveal">
+          <div class="section-label">Serviços</div>
+          <h2 class="section-title">
+            Soluções digitais pensadas para<br /><em
+              >cada fase do seu negócio</em
+            >
+          </h2>
+          <p class="section-sub">
+            Do primeiro acesso à conversão, cada detalhe é planejado com
+            objetivo claro: gerar resultado.
+          </p>
+        </div>
+        <div class="servicos-grid">
+          <article class="servico-card reveal reveal-delay-1">
+            <span class="servico-num" aria-hidden="true">01</span>
+            <div class="servico-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+            </div>
+            <h3 class="servico-title">Landing Pages</h3>
+            <p class="servico-desc">
+              Landing pages desenvolvidas para transformar tráfego em leads
+              qualificados. Estrutura baseada em comportamento do usuário,
+              reduzindo fricções e aumentando a taxa de conversão.
+            </p>
+            <ul class="servico-features" role="list">
+              <li class="servico-feature">Estrutura orientada à conversão</li>
+              <li class="servico-feature">
+                Integração com ferramentas de captação
+              </li>
+              <li class="servico-feature">Otimização para campanhas pagas</li>
+              <li class="servico-feature">Carregamento rápido e responsivo</li>
+            </ul>
+          </article>
+
+          <article class="servico-card reveal reveal-delay-2">
+            <span class="servico-num" aria-hidden="true">02</span>
+            <div class="servico-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <h3 class="servico-title">Sites Institucionais</h3>
+            <p class="servico-desc">
+              Sites que posicionam sua empresa com clareza e profissionalismo.
+              Mais do que presença digital, uma estrutura pensada para gerar
+              confiança e facilitar a decisão do cliente.
+            </p>
+            <ul class="servico-features" role="list">
+              <li class="servico-feature">Design personalizado</li>
+              <li class="servico-feature">SEO desde a base</li>
+              <li class="servico-feature">
+                Experiência fluida em todos os dispositivos
+              </li>
+              <li class="servico-feature">Estrutura escalável</li>
+            </ul>
+          </article>
+
+          <article class="servico-card reveal reveal-delay-3">
+            <span class="servico-num" aria-hidden="true">03</span>
+            <div class="servico-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                />
+              </svg>
+            </div>
+            <h3 class="servico-title">E-commerce</h3>
+            <p class="servico-desc">
+              Lojas virtuais projetadas para facilitar a compra e aumentar o
+              faturamento. Foco em usabilidade, performance e estabilidade da
+              operação.
+            </p>
+            <ul class="servico-features" role="list">
+              <li class="servico-feature">Checkout otimizado</li>
+              <li class="servico-feature">Integração com pagamentos</li>
+              <li class="servico-feature">Gestão de produtos e estoque</li>
+              <li class="servico-feature">
+                Métricas e acompanhamento de vendas
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         4. COMO FUNCIONA
+    ============================== -->
+    <section id="como-funciona" aria-label="Como funciona">
+      <div class="container">
+        <div class="como-header reveal">
+          <div class="section-label">Processo</div>
+          <h2 class="section-title">
+            Um processo claro, direto<br /><em>e sem surpresas</em>
+          </h2>
+          <p class="section-sub">
+            Cada etapa é pensada para garantir clareza, alinhamento e um
+            resultado final que realmente funciona.
+          </p>
+        </div>
+        <div class="como-steps">
+          <div class="como-step reveal reveal-delay-1">
+            <div class="como-step-num">01</div>
+            <div class="como-step-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </div>
+            <h4>Diagnóstico</h4>
+            <p>
+              Entendimento do seu negócio, público e objetivos. Sem isso,
+              qualquer site é apenas achismo.
+            </p>
+          </div>
+
+          <div class="como-step reveal reveal-delay-2">
+            <div class="como-step-num">02</div>
+            <div class="como-step-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h4>Estratégia</h4>
+            <p>
+              Definição da estrutura ideal para gerar resultado com base no seu
+              mercado e no comportamento do seu cliente.
+            </p>
+          </div>
+
+          <div class="como-step reveal reveal-delay-3">
+            <div class="como-step-num">03</div>
+            <div class="como-step-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h4>Desenvolvimento</h4>
+            <p>
+              Criação do site com foco em performance, usabilidade e conversão —
+              código limpo, rápido e responsivo.
+            </p>
+          </div>
+
+          <div class="como-step reveal reveal-delay-4">
+            <div class="como-step-num">04</div>
+            <div class="como-step-icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h4>Entrega</h4>
+            <p>
+              Publicação do site + orientação completa para uso e próximos
+              passos. Você sai preparado para crescer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         5. PORTFÓLIO
+    ============================== -->
+    <section id="portfolio" aria-label="Portfólio">
+      <div class="container">
+        <div class="portfolio-header reveal">
+          <div>
+            <div class="section-label">Portfólio</div>
+            <h2 class="section-title">
+              Projetos desenvolvidos com<br /><em>foco em resultado</em>
+            </h2>
+            <p
+              style="
+                font-size: 0.95rem;
+                color: var(--text-dim);
+                margin-top: 0.6rem;
+                max-width: 460px;
+              "
+            >
+              Cada projeto resolve um problema específico e é construído com um
+              objetivo claro.
+            </p>
+          </div>
+          <a href="#contato" class="btn btn-outline">
+            Ver todos os projetos
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-item reveal">
+            <div class="portfolio-placeholder">
+              <div class="portfolio-placeholder-inner">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+                <span>Thumbnail do projeto</span>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-cat">Site Institucional</div>
+              <div class="portfolio-overlay-title">Clínica Dr. Mendes</div>
+              <div class="portfolio-detail-list">
+                <div class="portfolio-detail-item">
+                  <strong>Problema</strong>
+                  <span>Baixa presença digital e pouca captação online</span>
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Solução</strong>
+                  <span
+                    >Estrutura otimizada para conversão + formulário
+                    estratégico</span
+                  >
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Resultado</strong>
+                  <span
+                    >Aumento na geração de contatos já nas primeiras
+                    semanas</span
+                  >
+                </div>
+              </div>
+              <span class="portfolio-overlay-link">Ver projeto →</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-1">
+            <div class="portfolio-placeholder">
+              <div class="portfolio-placeholder-inner">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+                <span>Thumbnail do projeto</span>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-cat">Landing Page</div>
+              <div class="portfolio-overlay-title">Adv. Carvalho</div>
+              <div class="portfolio-detail-list">
+                <div class="portfolio-detail-item">
+                  <strong>Problema</strong>
+                  <span>Tráfego sem conversão</span>
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Solução</strong>
+                  <span>Página com proposta de valor clara e CTA direto</span>
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Resultado</strong>
+                  <span>Aumento significativo na geração de leads</span>
+                </div>
+              </div>
+              <span class="portfolio-overlay-link">Ver projeto →</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-2">
+            <div class="portfolio-placeholder">
+              <div class="portfolio-placeholder-inner">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+                <span>Thumbnail do projeto</span>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-cat">E-commerce</div>
+              <div class="portfolio-overlay-title">Empório Artesanal</div>
+              <div class="portfolio-detail-list">
+                <div class="portfolio-detail-item">
+                  <strong>Problema</strong>
+                  <span>Dificuldade em escalar vendas online</span>
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Solução</strong>
+                  <span
+                    >Loja com navegação simplificada e checkout otimizado</span
+                  >
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Resultado</strong>
+                  <span
+                    >Crescimento consistente nas vendas após lançamento</span
+                  >
+                </div>
+              </div>
+              <span class="portfolio-overlay-link">Ver projeto →</span>
+            </div>
+          </article>
+
+          <article class="portfolio-item reveal reveal-delay-3">
+            <div class="portfolio-placeholder">
+              <div class="portfolio-placeholder-inner">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+                <span>Thumbnail do projeto</span>
+              </div>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="portfolio-overlay-cat">Site Institucional</div>
+              <div class="portfolio-overlay-title">Consultório Vital</div>
+              <div class="portfolio-detail-list">
+                <div class="portfolio-detail-item">
+                  <strong>Problema</strong>
+                  <span>Presença digital genérica, sem diferenciação</span>
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Solução</strong>
+                  <span
+                    >Redesign focado em autoridade e captação de
+                    agendamentos</span
+                  >
+                </div>
+                <div class="portfolio-detail-item">
+                  <strong>Resultado</strong>
+                  <span>Aumento expressivo nos agendamentos via site</span>
+                </div>
+              </div>
+              <span class="portfolio-overlay-link">Ver projeto →</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         6. DIFERENCIAIS
+    ============================== -->
+    <section id="diferenciais" aria-label="Diferenciais">
+      <div class="container diferenciais-inner">
+        <div>
+          <div class="section-label reveal">Por que me escolher</div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Por que escolher<br /><em>trabalhar comigo</em>
+          </h2>
+          <div class="diferenciais-list">
+            <div class="diferencial-item reveal reveal-delay-1">
+              <div class="diferencial-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <div class="diferencial-texto">
+                <h4>Autoridade Técnica</h4>
+                <p>
+                  Desenvolvimento com base sólida em engenharia de software.
+                  Código limpo, seguro e preparado para crescimento.
+                </p>
+              </div>
+            </div>
+
+            <div class="diferencial-item reveal reveal-delay-2">
+              <div class="diferencial-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <div class="diferencial-texto">
+                <h4>Foco em Conversão</h4>
+                <p>
+                  Cada elemento do site é pensado para guiar o usuário até a
+                  ação. Menos distração, mais resultado.
+                </p>
+              </div>
+            </div>
+
+            <div class="diferencial-item reveal reveal-delay-3">
+              <div class="diferencial-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="diferencial-texto">
+                <h4>Performance</h4>
+                <p>
+                  Sites rápidos, estáveis e otimizados. Velocidade impacta
+                  diretamente a experiência e as vendas.
+                </p>
+              </div>
+            </div>
+
+            <div class="diferencial-item reveal reveal-delay-4">
+              <div class="diferencial-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="diferencial-texto">
+                <h4>Atendimento Direto</h4>
+                <p>
+                  Você fala diretamente comigo em todas as etapas. Comunicação
+                  clara, alinhamento constante e sem intermediários.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diferenciais-quote reveal reveal-delay-2">
+          <div class="diferenciais-quote-mark" aria-hidden="true">&ldquo;</div>
+          <p class="diferenciais-quote-text">
+            Seu site deve ser o melhor vendedor da sua empresa. Disponível
+            <em>24 horas por dia</em>, 7 dias por semana, sem pausas.
+          </p>
+          <div class="diferenciais-quote-author">
+            <div class="dqa-line" aria-hidden="true"></div>
+            <span class="dqa-text">Carol Gonzaga — Desenvolvedora Web</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         7. DEPOIMENTOS
+    ============================== -->
+    <section id="depoimentos" aria-label="Depoimentos">
+      <div class="container">
+        <div class="depo-header reveal">
+          <div class="section-label">Depoimentos</div>
+          <h2 class="section-title">
+            Resultados reais de quem decidiu<br /><em
+              >investir com estratégia</em
+            >
+          </h2>
+          <p class="section-sub">
+            Profissionais que apostaram em presença digital de qualidade — e
+            colheram os frutos.
+          </p>
+        </div>
+        <div class="depo-grid">
+          <article class="depo-card reveal reveal-delay-1">
+            <div class="depo-stars" aria-label="5 estrelas">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+            <p class="depo-text">
+              "O site ficou muito além do que eu esperava. Profissional,
+              elegante e já na primeira semana recebi consultas de novos
+              pacientes através do formulário de contato."
+            </p>
+            <div class="depo-author">
+              <div class="depo-avatar" aria-hidden="true">DR</div>
+              <div>
+                <div class="depo-name">Dr. Roberto Alves</div>
+                <div class="depo-role">Médico Cardiologista, São Paulo</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="depo-card reveal reveal-delay-2">
+            <div class="depo-stars" aria-label="5 estrelas">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+            <p class="depo-text">
+              "Minha landing page de captação triplicou os leads em dois meses.
+              A atenção ao detalhe e o entendimento do meu público foram
+              impressionantes. Recomendo sem hesitar."
+            </p>
+            <div class="depo-author">
+              <div class="depo-avatar" aria-hidden="true">MC</div>
+              <div>
+                <div class="depo-name">Dra. Mariana Costa</div>
+                <div class="depo-role">
+                  Advogada Tributarista, Rio de Janeiro
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="depo-card reveal reveal-delay-3">
+            <div class="depo-stars" aria-label="5 estrelas">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"
+                />
+              </svg>
+            </div>
+            <p class="depo-text">
+              "Minha loja online ficou incrível! As vendas cresceram 180% no
+              primeiro trimestre após o lançamento. O processo foi muito
+              tranquilo e organizado, prazo cumprido à risca."
+            </p>
+            <div class="depo-author">
+              <div class="depo-avatar" aria-hidden="true">LP</div>
+              <div>
+                <div class="depo-name">Lucas Pereira</div>
+                <div class="depo-role">Empreendedor, Belo Horizonte</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         8. CTA FINAL
+    ============================== -->
+    <section id="cta" aria-label="Chamada para ação">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="section-label">Próximos passos</div>
+          <h2 class="section-title">
+            Seu próximo cliente pode estar<br />procurando por você
+            <em>agora</em>
+          </h2>
+          <p class="section-sub">
+            Vamos estruturar um site que represente seu negócio com clareza,
+            profissionalismo e foco em resultado.<br />
+            Você recebe uma proposta personalizada, direta ao ponto e sem
+            compromisso.
+          </p>
+          <div class="cta-actions">
+            <a href="#contato" class="btn btn-primary">
+              Receber proposta personalizada
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a
+              href="https://wa.me/5511912986866"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.103 1.523 5.83L.057 23.928l6.265-1.43A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.031-1.382l-.361-.214-3.728.851.877-3.607-.236-.372A9.785 9.785 0 012.182 12c0-5.418 4.4-9.818 9.818-9.818 5.418 0 9.818 4.4 9.818 9.818 0 5.418-4.4 9.818-9.818 9.818z"
+                />
+              </svg>
+              Falar no WhatsApp
+              <span class="wpp-hint">(Resposta rápida)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         9. CONTATO
+    ============================== -->
+    <section id="contato" aria-label="Formulário de contato">
+      <div class="container contato-inner">
+        <div>
+          <div class="section-label reveal">Contato</div>
+          <h2 class="section-title reveal reveal-delay-1">
+            Me conte sobre<br /><em>o seu projeto</em>
+          </h2>
+          <p
+            class="section-sub reveal reveal-delay-2"
+            style="margin-top: 0.8rem"
+          >
+            Atendo empresas e profissionais em São Paulo e todo o Brasil. Vou
+            analisar seu cenário e te retornar com uma proposta clara...
+          </p>
+          <div class="contato-info">
+            <div class="contato-item reveal reveal-delay-1">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="contato-item-label">E-mail</div>
+                <div class="contato-item-val">dev.carolgonzaga@gmail.com</div>
+              </div>
+            </div>
+            <div class="contato-item reveal reveal-delay-2">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.72 6.72l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="contato-item-label">WhatsApp</div>
+                <div class="contato-item-val">(11) 91298-6866</div>
+              </div>
+            </div>
+            <div class="contato-item reveal reveal-delay-3">
+              <div class="contato-item-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div>
+                <div class="contato-item-label">Horário de atendimento</div>
+                <div class="contato-item-val">Seg – Sex, 9h às 18h</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <form class="contato-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  placeholder="Seu nome"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seu@email.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="servico">Serviço de interesse</label>
+              <select id="servico" name="servico">
+                <option value="" disabled selected>Selecione um serviço</option>
+                <option value="landing">Landing Page</option>
+                <option value="institucional">Site Institucional</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                placeholder="Descreva seu projeto, objetivos e o que você espera do site"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              Enviar e receber proposta
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+            <p class="form-nota">Retorno em até 24h úteis</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+    <footer id="footer" role="contentinfo">
+      <div class="container footer-inner">
+        <a href="#hero" class="footer-logo">Carol<span>Gonzaga</span></a>
+        <nav class="footer-links" aria-label="Links do rodapé">
+          <a href="#servicos">Serviços</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a
+            href="#portfolio"
+            title="Ver projetos de desenvolvimento de sites profissionais"
+            >Portfólio</a
+          >
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="footer-social" aria-label="Redes sociais">
+          <a
+            href="https://www.carolgonzaga.click/"
+            aria-label="Portfólio"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/anacquesta/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"
+              />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/CarolGonzaga"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="footer-copy">
+          &copy; <span id="year"></span> Carol Gonzaga — Todos os direitos
+          reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
