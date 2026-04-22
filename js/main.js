@@ -1,55 +1,87 @@
-      /* ------ Ano dinâmico ------ */
-      document.getElementById("year").textContent = new Date().getFullYear();
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("year").textContent = new Date().getFullYear();
+      });
 
-      /* ------ Navbar scroll ------ */
-      const navbar = document.getElementById("navbar");
-      window.addEventListener(
-        "scroll",
-        () => {
-          navbar.classList.toggle("scrolled", window.scrollY > 40);
-        },
-        { passive: true },
+      // Custom cursor
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("follower");
+      let mx = 0,
+        my = 0,
+        fx = 0,
+        fy = 0;
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.transform =
+          "translate(" + (mx - 5) + "px," + (my - 5) + "px)";
+      });
+      function animFollower() {
+        fx += (mx - fx) * 0.12;
+        fy += (my - fy) * 0.12;
+        follower.style.transform =
+          "translate(" + (fx - 18) + "px," + (fy - 18) + "px)";
+        requestAnimationFrame(animFollower);
+      }
+      animFollower();
+
+      // Nav scroll
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("scrolled", window.scrollY > 40);
+      });
+
+      // Reveal on scroll
+      const reveals = document.querySelectorAll(
+        "section > *:not(.section-label)",
       );
-
-      /* ------ Menu mobile ------ */
-      const hamburger = document.getElementById("hamburger");
-      const navMobile = document.getElementById("navMobile");
-      const navClose = document.getElementById("navClose");
-
-      function openMenu() {
-        hamburger.classList.add("open");
-        navMobile.classList.add("open");
-        navMobile.setAttribute("aria-hidden", "false");
-        hamburger.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-      }
-      function closeMenu() {
-        hamburger.classList.remove("open");
-        navMobile.classList.remove("open");
-        navMobile.setAttribute("aria-hidden", "true");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      }
-      hamburger.addEventListener("click", openMenu);
-      navClose.addEventListener("click", closeMenu);
-
-      /* ------ Scroll Reveal ------ */
-      const revealEls = document.querySelectorAll(".reveal");
-      const revealObserver = new IntersectionObserver(
+      const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              revealObserver.unobserve(entry.target);
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
             }
           });
         },
-        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        { threshold: 0.1 },
       );
-      revealEls.forEach((el) => revealObserver.observe(el));
+      document
+        .querySelectorAll(
+          ".about-grid, .services-grid, .process-list, .stats-grid, .stack-scroll, .contact-h2, .contact-sub, .contact-links, .portfolio-header, .portfolio-grid, #openModalBtn",
+        )
+        .forEach((el) => {
+          el.classList.add("reveal");
+          observer.observe(el);
+        });
 
-      /* ------ Formulário ------ */
+      // =========================================
+      // Modal & Formulário de Contato
+      // =========================================
+      const modal = document.getElementById("contactModal");
+      const openBtn = document.getElementById("openModalBtn");
+      const closeBtn = document.getElementById("closeModalBtn");
       const form = document.getElementById("contactForm");
+
+      // Abrir modal
+      openBtn.addEventListener("click", () => {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Trava o scroll do fundo
+      });
+
+      // Fechar no X
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        document.body.style.overflow = ""; // Libera o scroll
+      });
+
+      // Fechar clicando fora do box
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Simular Envio do Formulário
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
@@ -62,18 +94,26 @@
           return;
         }
 
-        /* Simula envio */
+        /* Animação de enviando */
         btn.textContent = "Enviando…";
+        btn.style.opacity = "0.7";
         btn.disabled = true;
+
         setTimeout(() => {
-          btn.innerHTML = "✓ Mensagem enviada!";
-          btn.style.background = "#2a9d5c";
+          btn.textContent = "✓ Mensagem enviada!";
+          btn.style.background = "var(--text)";
+          btn.style.color = "var(--bg)";
+          btn.style.opacity = "1";
           form.reset();
+
+          /* Fecha modal automaticamente após 3 segundos */
           setTimeout(() => {
-            btn.innerHTML =
-              'Enviar mensagem <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+            btn.textContent = "Enviar mensagem";
             btn.style.background = "";
+            btn.style.color = "";
             btn.disabled = false;
-          }, 3500);
+            modal.classList.remove("active");
+            document.body.style.overflow = "";
+          }, 3000);
         }, 1200);
       });
