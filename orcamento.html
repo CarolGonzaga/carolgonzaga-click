@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planos e Orçamentos — Carol Gonzaga</title>
+    <title>Próximos Passos — Carol Gonzaga</title>
     <meta
       name="description"
-      content="Escolha o pacote ideal para o seu projeto."
+      content="Briefing recebido com sucesso. Veja os próximos passos do seu projeto."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -187,15 +187,15 @@
       }
 
       main {
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 0 auto;
-        padding: 140px 48px 80px;
+        padding: 160px 48px 80px;
       }
 
       /* Hero */
       .hero {
         text-align: center;
-        margin-bottom: 80px;
+        margin-bottom: 100px;
       }
       .tag {
         font-family: var(--mono);
@@ -203,7 +203,7 @@
         letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--accent);
-        margin-bottom: 16px;
+        margin-bottom: 20px;
         display: inline-flex;
         align-items: center;
         gap: 10px;
@@ -218,7 +218,7 @@
       }
       .hero-h1 {
         font-family: var(--serif);
-        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        font-size: clamp(2.8rem, 6vw, 5rem);
         line-height: 1.1;
         font-weight: 400;
         margin-bottom: 24px;
@@ -229,138 +229,58 @@
       }
       .hero-sub {
         color: var(--muted);
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: 0 auto;
-        max-width: 600px;
+        max-width: 640px;
+        line-height: 1.7;
       }
 
-      /* Pricing Grid */
-      .pricing-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin-bottom: 120px;
-      }
-
-      .card {
+      /* Process Section */
+      .process {
+        margin-bottom: 100px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 16px;
-        padding: 40px 32px;
-        display: flex;
-        flex-direction: column;
+        padding: 64px;
+      }
+      .process-title {
+        text-align: center;
+        font-family: var(--serif);
+        font-size: 2.2rem;
+        margin-bottom: 56px;
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      .step {
         position: relative;
-        transition:
-          transform 0.3s,
-          border-color 0.3s;
-      }
-      .card:hover {
-        border-color: rgba(138, 134, 128, 0.3);
-        transform: translateY(-4px);
       }
 
-      .card.recommended {
-        border-color: var(--accent);
-        background: linear-gradient(
-          180deg,
-          rgba(200, 245, 100, 0.03) 0%,
-          var(--surface) 100%
-        );
-        box-shadow:
-          0 0 0 1px rgba(200, 245, 100, 0.1),
-          0 20px 40px rgba(0, 0, 0, 0.4);
-        transform: translateY(-8px);
-      }
-      .card.recommended:hover {
-        transform: translateY(-12px);
-        border-color: var(--accent);
-      }
-      .badge {
-        position: absolute;
-        top: -12px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--accent);
-        color: #0a0a0a;
-        font-family: var(--mono);
-        font-size: 0.6rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        font-weight: 700;
-        padding: 4px 12px;
-        border-radius: 99px;
-      }
-
-      .card-top-tag {
-        font-family: var(--mono);
-        font-size: 0.65rem;
-        text-transform: uppercase;
-        color: var(--muted);
-        letter-spacing: 0.1em;
-        margin-bottom: 8px;
-      }
-      .card.recommended .card-top-tag {
-        color: var(--accent);
-      }
-      .card-title {
+      .step-num {
         font-family: var(--serif);
-        font-size: 2rem;
-        color: var(--text);
-        line-height: 1.1;
-        margin-bottom: 12px;
-      }
-      .card-desc {
-        font-size: 0.85rem;
-        color: var(--muted);
-        margin-bottom: 32px;
-        min-height: 40px;
-      }
-
-      .card-price-label {
-        font-family: var(--mono);
-        font-size: 0.6rem;
-        text-transform: uppercase;
-        color: var(--muted);
-        letter-spacing: 0.1em;
-      }
-      .card-price {
-        font-family: var(--serif);
-        font-size: 2.8rem;
-        color: var(--text);
+        font-size: 3rem;
+        color: var(--border);
         line-height: 1;
-        margin: 4px 0 8px;
+        margin-bottom: 20px;
+        transition: color 0.3s;
       }
-      .card-time {
-        font-size: 0.8rem;
-        color: var(--muted);
-        padding-bottom: 32px;
-        border-bottom: 1px solid var(--border);
-        margin-bottom: 32px;
-      }
-
-      .features-list {
-        list-style: none;
-        margin-bottom: 40px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .features-list li {
-        font-size: 0.85rem;
-        color: var(--text);
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        line-height: 1.4;
-      }
-      .features-list li::before {
-        content: "✦";
-        color: var(--muted);
-        font-size: 0.8rem;
-      }
-      .card.recommended .features-list li::before {
+      .step:hover .step-num {
         color: var(--accent);
+      }
+      .step-title {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text);
+        margin-bottom: 16px;
+      }
+      .step-desc {
+        font-size: 0.95rem;
+        color: var(--muted);
+        line-height: 1.6;
       }
 
       /* Buttons */
@@ -370,16 +290,16 @@
         justify-content: center;
         gap: 8px;
         font-family: var(--mono);
-        font-size: 0.72rem;
+        font-size: 0.75rem;
         letter-spacing: 0.1em;
         text-transform: uppercase;
-        padding: 16px 24px;
+        padding: 18px 32px;
         border-radius: 6px;
         cursor: none;
         text-decoration: none;
         font-weight: 700;
         transition: all 0.2s;
-        width: 100%;
+        width: auto;
         text-align: center;
       }
       .btn-ghost {
@@ -401,127 +321,27 @@
         transform: translateY(-2px);
       }
 
-      /* Process Section */
-      .process {
-        margin-bottom: 80px;
-      }
-      .process-title {
-        text-align: center;
-        font-family: var(--serif);
-        font-size: 2.4rem;
-        margin-bottom: 64px;
-      }
-      .process-title em {
-        font-style: italic;
-        color: var(--accent);
-      }
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-      }
-      .step-num {
-        font-family: var(--serif);
-        font-size: 3rem;
-        color: var(--border);
-        line-height: 1;
-        margin-bottom: 16px;
-        transition: color 0.3s;
-      }
-      .step:hover .step-num {
-        color: var(--accent);
-      }
-      .step-title {
-        font-family: var(--mono);
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--text);
-        margin-bottom: 12px;
-      }
-      .step-desc {
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-
-      /* Details Grid (Inclusos e Pagamento) */
-      .details-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        margin-bottom: 120px;
-      }
-      .details-card {
-        background: var(--surface2);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 48px;
-      }
-      .details-title {
-        font-family: var(--serif);
-        font-size: 1.8rem;
-        color: var(--text);
-        margin-bottom: 32px;
-      }
-      .details-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        list-style: none;
-      }
-      .details-list li {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-        color: var(--muted);
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-      .details-list li .icon {
-        color: var(--accent);
-        font-size: 1.1rem;
-        line-height: 1;
-        flex-shrink: 0;
-        margin-top: 2px;
-      }
-      .details-list li strong {
-        color: var(--text);
-        font-weight: 500;
-      }
-
       /* CTA Section */
       .cta-block {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 64px 48px;
         text-align: center;
+        margin-top: 40px;
       }
       .cta-h2 {
         font-family: var(--serif);
-        font-size: 2.4rem;
+        font-size: 2rem;
         margin-bottom: 16px;
-      }
-      .cta-h2 em {
-        font-style: italic;
-        color: var(--accent);
+        color: var(--text);
       }
       .cta-sub {
         color: var(--muted);
         font-size: 1rem;
-        margin-bottom: 32px;
-        max-width: 440px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-bottom: 40px;
       }
       .cta-buttons {
         display: flex;
-        gap: 16px;
+        gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
-      }
-      .cta-buttons .btn {
-        width: auto;
       }
 
       footer {
@@ -535,7 +355,7 @@
         letter-spacing: 0.1em;
         color: var(--muted);
         text-transform: uppercase;
-        margin-top: 40px;
+        margin-top: 60px;
       }
 
       /* Animations */
@@ -561,11 +381,6 @@
       }
 
       /* Responsive */
-      @media (max-width: 1024px) {
-        .pricing-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
       @media (max-width: 768px) {
         nav {
           padding: 20px 24px;
@@ -573,22 +388,12 @@
         main {
           padding: 120px 24px 60px;
         }
-        .pricing-grid,
-        .process-grid,
-        .details-grid {
+        .process {
+          padding: 40px 24px;
+        }
+        .process-grid {
           grid-template-columns: 1fr;
-        }
-        .card.recommended {
-          transform: translateY(0);
-        }
-        .card.recommended:hover {
-          transform: translateY(-4px);
-        }
-        .details-card {
-          padding: 32px 24px;
-        }
-        .cta-block {
-          padding: 48px 24px;
+          gap: 48px;
         }
         .cta-buttons {
           flex-direction: column;
@@ -619,225 +424,59 @@
 
     <main>
       <div class="hero reveal">
-        <div class="tag">Briefing recebido · Próximo passo</div>
-        <h1 class="hero-h1">
-          Escolha o pacote que faz <em>sentido</em> pra você.
+        <div class="tag">Projeto em análise</div>
+        <h1 class="hero-h1" id="dynamicTitle">
+          Olá. <em>Recebi seu briefing!</em>
         </h1>
         <p class="hero-sub">
-          Esses são os pontos de partida. Vou analisar seu briefing com calma e
-          enviar uma proposta personalizada em até 24h.<br />Os valores podem
-          variar conforme o escopo final.
+          Seu projeto já está na minha mesa. Vou analisar com muito cuidado
+          todas as respostas que você enviou para entender a fundo o seu momento
+          e as suas necessidades.
         </p>
       </div>
 
-      <div class="pricing-grid">
-        <div class="card reveal" style="transition-delay: 0.1s">
-          <div class="card-top-tag">Conversão direta</div>
-          <h2 class="card-title">Landing Page</h2>
-          <p class="card-desc">Lançamentos, campanhas e captação de leads.</p>
-
-          <div class="card-price-label">A partir de</div>
-          <div class="card-price">R$ 2.500</div>
-          <div class="card-time">Entrega em 10-15 dias</div>
-
-          <ul class="features-list">
-            <li>Página única otimizada pra conversão</li>
-            <li>Design responsivo (mobile-first)</li>
-            <li>Formulário de contato + WhatsApp</li>
-            <li>SEO técnico básico</li>
-            <li>Hospedagem por 1 ano inclusa</li>
-            <li>1 rodada de revisão</li>
-          </ul>
-          <a href="#" class="btn btn-ghost wa-link" data-pacote="Landing Page"
-            >Quero esse pacote</a
-          >
-        </div>
-
-        <div class="card recommended reveal" style="transition-delay: 0.2s">
-          <div class="badge">Recomendado</div>
-          <div class="card-top-tag">Mais escolhido ✦</div>
-          <h2 class="card-title">Site Institucional</h2>
-          <p class="card-desc">
-            Empresas e profissionais que precisam de presença digital sólida.
-          </p>
-
-          <div class="card-price-label">A partir de</div>
-          <div class="card-price">R$ 4.800</div>
-          <div class="card-time">Entrega em 20-30 dias</div>
-
-          <ul class="features-list">
-            <li>
-              Até 6 páginas (Home, Sobre, Serviços, Portfólio, Blog, Contato)
-            </li>
-            <li>Design exclusivo do zero</li>
-            <li>Painel pra editar conteúdo (CMS)</li>
-            <li>SEO técnico avançado + Analytics</li>
-            <li>Integração com redes sociais</li>
-            <li>Hospedagem + domínio por 1 ano</li>
-            <li>2 rodadas de revisão</li>
-            <li>30 dias de suporte pós-entrega</li>
-          </ul>
-          <a
-            href="#"
-            class="btn btn-primary wa-link"
-            data-pacote="Site Institucional"
-            >Quero esse pacote</a
-          >
-        </div>
-
-        <div class="card reveal" style="transition-delay: 0.3s">
-          <div class="card-top-tag">Loja completa</div>
-          <h2 class="card-title">E-commerce</h2>
-          <p class="card-desc">
-            Quem quer vender online com gestão simples e escalável.
-          </p>
-
-          <div class="card-price-label">A partir de</div>
-          <div class="card-price">R$ 7.900</div>
-          <div class="card-time">Entrega em 30-45 dias</div>
-
-          <ul class="features-list">
-            <li>Loja virtual completa (Shopify ou customizada)</li>
-            <li>Catálogo com até 50 produtos cadastrados</li>
-            <li>Gateway de pagamento integrado</li>
-            <li>Cálculo de frete automático</li>
-            <li>Painel administrativo intuitivo</li>
-            <li>Integração com estoque e CRM</li>
-            <li>Treinamento em vídeo (2h)</li>
-            <li>60 dias de suporte pós-entrega</li>
-          </ul>
-          <a href="#" class="btn btn-ghost wa-link" data-pacote="E-commerce"
-            >Quero esse pacote</a
-          >
-        </div>
-      </div>
-
-      <div class="process reveal">
-        <h2 class="process-title">Como funciona <em>daqui pra frente?</em></h2>
+      <div class="process reveal" style="transition-delay: 0.1s">
+        <h2 class="process-title">Como funciona daqui pra frente?</h2>
         <div class="process-grid">
           <div class="step">
             <div class="step-num">01</div>
-            <h3 class="step-title">Análise do briefing</h3>
+            <h3 class="step-title">Mergulho no Briefing</h3>
             <p class="step-desc">
-              Em até 24h envio uma proposta detalhada com escopo, prazo e valor
-              final.
+              Faço uma leitura atenta de tudo o que você enviou para captar a
+              essência e os objetivos do seu negócio.
             </p>
           </div>
           <div class="step">
             <div class="step-num">02</div>
-            <h3 class="step-title">Conversa & ajustes</h3>
+            <h3 class="step-title">Proposta Personalizada</h3>
             <p class="step-desc">
-              Agendamos uma call sem compromisso pra alinhar expectativas e
-              ajustar o que precisar.
+              Em até 24h, retorno o contato com uma proposta sob medida contendo
+              o escopo ideal, orçamento e cronograma.
             </p>
           </div>
           <div class="step">
             <div class="step-num">03</div>
-            <h3 class="step-title">Aprovação & início</h3>
+            <h3 class="step-title">Call de Alinhamento</h3>
             <p class="step-desc">
-              Com tudo certo, assinamos contrato e começamos a desenhar seu
-              projeto.
+              Agendamos uma conversa rápida e sem compromisso para tirar
+              dúvidas, ajustar detalhes e dar o pontapé inicial.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="details-grid reveal">
-        <div class="details-card">
-          <h3 class="details-title">O que está incluído</h3>
-          <ul class="details-list">
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>Design responsivo</strong> — O site funciona
-                perfeitamente em celular, tablet e desktop.
-              </div>
-            </li>
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>SEO técnico básico</strong> — Estrutura de código
-                otimizada para mecanismos de busca desde o início.
-              </div>
-            </li>
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>2 rodadas de revisão</strong> — Ajustes de design e
-                texto durante o desenvolvimento.
-              </div>
-            </li>
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>Deploy e publicação</strong> — Coloco o site no ar e
-                configuro o domínio junto com você.
-              </div>
-            </li>
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>Suporte pós-entrega</strong> — 30 dias de suporte para
-                dúvidas e pequenos ajustes após o lançamento.
-              </div>
-            </li>
-            <li>
-              <span class="icon">✦</span>
-              <div>
-                <strong>Código próprio e documentado</strong> — Você fica com o
-                código-fonte completo do projeto.
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="details-card">
-          <h3 class="details-title">Condições de Pagamento</h3>
-          <ul class="details-list">
-            <li>
-              <span class="icon">💳</span>
-              <div>
-                <strong>Entrada de 50%</strong> para início do projeto, conforme
-                acordado em contrato.
-              </div>
-            </li>
-            <li>
-              <span class="icon">🚀</span>
-              <div>
-                <strong>50% restantes</strong> na entrega e aprovação final
-                antes do deploy.
-              </div>
-            </li>
-            <li>
-              <span class="icon">📋</span>
-              <div>
-                <strong>Contrato formal</strong> assinado pelas duas partes
-                antes do início do desenvolvimento.
-              </div>
-            </li>
-            <li>
-              <span class="icon">🔄</span>
-              <div>
-                Alterações de escopo fora do briefing original podem gerar
-                <strong>aditivos de valor</strong>.
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta-block reveal">
-        <h2 class="cta-h2">Ficou com <em>dúvida?</em></h2>
+      <div class="cta-block reveal" style="transition-delay: 0.2s">
+        <h2 class="cta-h2">Podemos começar?</h2>
         <p class="cta-sub">
-          Me chama no WhatsApp que conversamos sobre o que faz mais sentido pro
-          seu caso.
+          Se você lembrou de algum detalhe importante ou quer adiantar a nossa
+          conversa, me chame agora mesmo.
         </p>
         <div class="cta-buttons">
-          <a href="#" class="btn btn-primary wa-link" data-pacote="Dúvida Geral"
+          <a href="#" class="btn btn-primary" id="waBtn"
             >💬 Falar no WhatsApp</a
           >
           <a href="https://carolgonzaga.site" class="btn btn-ghost"
-            >Voltar pra home</a
+            >Voltar para o site</a
           >
         </div>
       </div>
@@ -899,34 +538,31 @@
       );
       document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
 
-      // ── WhatsApp Dynamic Links ──────────────────────────
+      // ── Mágica Dinâmica (Nome & WhatsApp) ───────────────
       const CAROL_WA = "5511912986866";
-
-      // Pega o nome do cliente da URL, se existir (ex: ?nome=Ana)
       const params = new URLSearchParams(window.location.search);
-      const nomeCliente = params.get("nome") || "";
+      const nomeCompleto = params.get("nome") || "";
 
-      // Configura todos os botões de WhatsApp da página
-      document.querySelectorAll(".wa-link").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          const pacote = btn.getAttribute("data-pacote");
+      // Pega só o primeiro nome
+      const primeiroNome = nomeCompleto
+        ? nomeCompleto.trim().split(" ")[0]
+        : "";
 
-          let saudacao = nomeCliente
-            ? `Olá Carol! Sou eu, ${nomeCliente.split(" ")[0]}.`
-            : "Olá Carol!";
-          let mensagem = "";
+      // Substitui o título do Hero se tiver o nome
+      if (primeiroNome) {
+        document.getElementById("dynamicTitle").innerHTML =
+          `Olá, <em>${primeiroNome}</em>. Recebi seu briefing!`;
+      }
 
-          if (pacote === "Dúvida Geral") {
-            mensagem = `${saudacao} Acabei de preencher o briefing, mas fiquei com algumas dúvidas e queria bater um papo.`;
-          } else {
-            mensagem = `${saudacao} Acabei de preencher o briefing e achei que o pacote *${pacote}* é o que faz mais sentido pra mim! Podemos conversar?`;
-          }
+      // Configura o botão do WhatsApp
+      const waBtn = document.getElementById("waBtn");
+      let saudacao = primeiroNome
+        ? `Olá Carol! Sou eu, ${primeiroNome}.`
+        : "Olá Carol!";
+      let mensagem = `${saudacao} Acabei de enviar meu briefing e queria tirar uma dúvida com você!`;
 
-          const url = `https://wa.me/${CAROL_WA}?text=${encodeURIComponent(mensagem)}`;
-          window.open(url, "_blank");
-        });
-      });
+      waBtn.href = `https://wa.me/${CAROL_WA}?text=${encodeURIComponent(mensagem)}`;
+      waBtn.target = "_blank";
     </script>
   </body>
 </html>
