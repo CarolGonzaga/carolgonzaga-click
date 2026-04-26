@@ -134,7 +134,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 160px 64px 80px 64px;
+  padding: 80px 64px 80px 64px;
   position: relative;
   z-index: 2;
 }
@@ -387,7 +387,7 @@ nav.scrolled {
 }
 /* Sections */
 section {
-  padding: 80px 64px;
+  padding: 50px 64px;
 }
 .section-label {
   font-family: var(--mono);
@@ -651,7 +651,6 @@ section {
   border: 1px solid var(--border);
   border-left: none;
   border-right: none;
-  margin-top: 48px;
 }
 .stack-track {
   display: flex;
