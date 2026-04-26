@@ -1,423 +1,932 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proposta de Orçamento — Carol Gonzaga</title>
-  <meta name="description" content="Proposta personalizada gerada a partir do seu briefing." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --border: #1e1e1e;
-      --text: #f0ede8;
-      --muted: #8a8680;
-      --accent: #c8f564;
-      --serif: "DM Serif Display", Georgia, serif;
-      --sans: "DM Sans", sans-serif;
-      --mono: "Space Mono", monospace;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg); color: var(--text);
-      font-family: var(--sans); font-weight: 300;
-      line-height: 1.6; overflow-x: hidden; cursor: none;
-    }
-    .cursor { width:10px;height:10px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10002;mix-blend-mode:difference; }
-    .cursor-follower { width:36px;height:36px;border:1px solid rgba(200,245,100,0.4);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:10001; }
-    .grain { position:fixed;inset:-200px;z-index:200;pointer-events:none;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 0.5s steps(1) infinite; }
-    @keyframes grain{0%,100%{transform:translate(0,0)}10%{transform:translate(-2%,-3%)}20%{transform:translate(4%,2%)}30%{transform:translate(-1%,4%)}40%{transform:translate(3%,-2%)}50%{transform:translate(-3%,1%)}60%{transform:translate(1%,3%)}70%{transform:translate(-4%,-1%)}80%{transform:translate(2%,4%)}90%{transform:translate(-2%,-4%)}}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planos e Orçamentos — Carol Gonzaga</title>
+    <meta
+      name="description"
+      content="Escolha o pacote ideal para o seu projeto."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --surface: #111111;
+        --surface2: #161616;
+        --border: #1e1e1e;
+        --text: #f0ede8;
+        --muted: #8a8680;
+        --accent: #c8f564;
+        --serif: "DM Serif Display", Georgia, serif;
+        --sans: "DM Sans", sans-serif;
+        --mono: "Space Mono", monospace;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-weight: 300;
+        line-height: 1.6;
+        overflow-x: hidden;
+        cursor: none;
+      }
 
-    nav {
-      position:fixed;top:0;left:0;right:0;z-index:100;
-      padding:24px 48px;display:flex;align-items:center;justify-content:space-between;
-      border-bottom:1px solid transparent;
-      transition:border-color 0.3s,backdrop-filter 0.3s,background 0.3s;
-    }
-    nav.scrolled { border-color:var(--border);backdrop-filter:blur(20px);background:rgba(10,10,10,0.8); }
-    .nav-logo { font-family:var(--serif);font-size:1.25rem;color:var(--text);text-decoration:none; }
-    .nav-back { font-family:var(--mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s; }
-    .nav-back:hover { color:var(--accent); }
+      /* Cursor & Grain */
+      @media (max-width: 1023px) {
+        body {
+          cursor: auto;
+        }
+      }
+      .cursor {
+        width: 10px;
+        height: 10px;
+        background: var(--accent);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 10002;
+        mix-blend-mode: difference;
+        transition:
+          width 0.2s,
+          height 0.2s;
+      }
+      .cursor-follower {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(200, 245, 100, 0.4);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 10001;
+        transition:
+          width 0.2s,
+          height 0.2s,
+          border-color 0.2s;
+      }
+      .cursor.hovering {
+        width: 6px;
+        height: 6px;
+      }
+      .cursor-follower.hovering {
+        width: 56px;
+        height: 56px;
+        border-color: var(--accent);
+      }
+      @media (max-width: 1023px) {
+        .cursor,
+        .cursor-follower {
+          display: none;
+        }
+      }
 
-    main { max-width:860px;margin:0 auto;padding:120px 48px 80px; }
+      .grain {
+        position: fixed;
+        inset: -200px;
+        z-index: 200;
+        pointer-events: none;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        animation: grain 0.5s steps(1) infinite;
+      }
+      @keyframes grain {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        10% {
+          transform: translate(-2%, -3%);
+        }
+        20% {
+          transform: translate(4%, 2%);
+        }
+        30% {
+          transform: translate(-1%, 4%);
+        }
+        40% {
+          transform: translate(3%, -2%);
+        }
+        50% {
+          transform: translate(-3%, 1%);
+        }
+        60% {
+          transform: translate(1%, 3%);
+        }
+        70% {
+          transform: translate(-4%, -1%);
+        }
+        80% {
+          transform: translate(2%, 4%);
+        }
+        90% {
+          transform: translate(-2%, -4%);
+        }
+      }
 
-    /* Hero area */
-    .proposal-tag {
-      font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;
-      color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px;
-    }
-    .proposal-tag::before { content:'';width:6px;height:6px;background:var(--accent);border-radius:50%; }
-    .proposal-h1 { font-family:var(--serif);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;font-weight:400;margin-bottom:16px; }
-    .proposal-h1 em { font-style:italic;color:var(--accent); }
-    .proposal-sub { color:var(--muted);font-size:0.95rem;margin-bottom:64px;max-width:560px; }
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 24px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid transparent;
+        transition:
+          border-color 0.3s,
+          backdrop-filter 0.3s,
+          background 0.3s;
+      }
+      nav.scrolled {
+        border-color: var(--border);
+        backdrop-filter: blur(20px);
+        background: rgba(10, 10, 10, 0.8);
+      }
+      .nav-logo {
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .nav-logo span {
+        color: var(--accent);
+      }
+      .nav-back {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-back:hover {
+        color: var(--accent);
+      }
 
-    /* Price hero */
-    .price-hero {
-      background:rgba(200,245,100,0.05);border:1px solid rgba(200,245,100,0.25);
-      padding:40px 48px;margin-bottom:48px;
-      display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
-    }
-    .price-hero-left {}
-    .price-hero-label { font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px; }
-    .price-hero-value { font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);color:var(--accent);line-height:1; }
-    .price-hero-note { font-size:0.8rem;color:var(--muted);margin-top:8px; }
-    .price-hero-right { display:flex;flex-direction:column;gap:12px;align-items:flex-end; }
-    .price-validity { font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--border);border:1px solid var(--border);padding:6px 12px; }
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 140px 48px 80px;
+      }
 
-    /* Sections */
-    .section-block { margin-bottom:48px; }
-    .section-block-title {
-      font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;
-      color:var(--accent);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);
-    }
+      /* Hero */
+      .hero {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tag::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+      }
+      .hero-h1 {
+        font-family: var(--serif);
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        line-height: 1.1;
+        font-weight: 400;
+        margin-bottom: 24px;
+      }
+      .hero-h1 em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .hero-sub {
+        color: var(--muted);
+        font-size: 1rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
 
-    /* Client summary */
-    .info-grid { display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border); }
-    .info-cell { background:var(--surface);padding:20px 24px; }
-    .info-cell-label { font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px; }
-    .info-cell-value { font-size:0.9rem;color:var(--text); }
+      /* Pricing Grid */
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 120px;
+      }
 
-    /* Scope table */
-    .scope-table { width:100%;border-collapse:collapse;border:1px solid var(--border); }
-    .scope-table th {
-      background:var(--surface);font-family:var(--mono);font-size:0.6rem;
-      letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
-      padding:14px 20px;text-align:left;border-bottom:1px solid var(--border);font-weight:400;
-    }
-    .scope-table td { padding:16px 20px;border-bottom:1px solid var(--border);font-size:0.88rem; }
-    .scope-table tr:last-child td { border-bottom:none; }
-    .scope-table td:last-child { text-align:right;font-family:var(--mono);font-size:0.78rem;color:var(--accent); }
-    .scope-total td { background:rgba(200,245,100,0.04); }
-    .scope-total td:last-child { font-size:1rem;font-family:var(--serif); }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 40px 32px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+      }
+      .card:hover {
+        border-color: rgba(138, 134, 128, 0.3);
+        transform: translateY(-4px);
+      }
 
-    /* Timeline */
-    .timeline { display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border); }
-    .timeline-item { background:var(--surface);padding:24px 28px;display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:start; }
-    .timeline-phase {
-      font-family:var(--serif);font-size:2rem;color:var(--border);line-height:1;
-    }
-    .timeline-title { font-family:var(--mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text);margin-bottom:4px; }
-    .timeline-desc { font-size:0.82rem;color:var(--muted); }
-    .timeline-duration { font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);white-space:nowrap;margin-top:4px; }
+      .card.recommended {
+        border-color: var(--accent);
+        background: linear-gradient(
+          180deg,
+          rgba(200, 245, 100, 0.03) 0%,
+          var(--surface) 100%
+        );
+        box-shadow:
+          0 0 0 1px rgba(200, 245, 100, 0.1),
+          0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-8px);
+      }
+      .card.recommended:hover {
+        transform: translateY(-12px);
+        border-color: var(--accent);
+      }
+      .badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--accent);
+        color: #0a0a0a;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 99px;
+      }
 
-    /* Terms */
-    .terms-list { display:flex;flex-direction:column;gap:12px; }
-    .term-item { display:flex;gap:16px;padding:16px 20px;background:var(--surface);border:1px solid var(--border); }
-    .term-icon { font-size:1.1rem;flex-shrink:0;margin-top:2px; }
-    .term-text { font-size:0.85rem;color:var(--muted);line-height:1.6; }
-    .term-text strong { color:var(--text);font-weight:500; }
+      .card-top-tag {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        margin-bottom: 8px;
+      }
+      .card.recommended .card-top-tag {
+        color: var(--accent);
+      }
+      .card-title {
+        font-family: var(--serif);
+        font-size: 2rem;
+        color: var(--text);
+        line-height: 1.1;
+        margin-bottom: 12px;
+      }
+      .card-desc {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 32px;
+        min-height: 40px;
+      }
 
-    /* CTA area */
-    .cta-block {
-      background:var(--surface);border:1px solid var(--border);
-      padding:48px;text-align:center;margin-top:64px;
-    }
-    .cta-h2 { font-family:var(--serif);font-size:2.4rem;font-weight:400;margin-bottom:16px; }
-    .cta-h2 em { font-style:italic;color:var(--accent); }
-    .cta-sub { color:var(--muted);font-size:0.95rem;margin-bottom:36px;max-width:440px;margin-left:auto;margin-right:auto; }
-    .cta-buttons { display:flex;gap:16px;justify-content:center;flex-wrap:wrap; }
+      .card-price-label {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+      .card-price {
+        font-family: var(--serif);
+        font-size: 2.8rem;
+        color: var(--text);
+        line-height: 1;
+        margin: 4px 0 8px;
+      }
+      .card-time {
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 32px;
+      }
 
-    .btn-primary { background:var(--accent);color:#0a0a0a;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:14px 28px;border:none;cursor:none;text-decoration:none;transition:background 0.2s,transform 0.2s;display:inline-flex;align-items:center;gap:10px; }
-    .btn-primary:hover { background:#d4ff6e;transform:translateY(-2px); }
-    .btn-ghost { color:var(--text);font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:13px 28px;border:1px solid var(--border);cursor:none;text-decoration:none;background:transparent;transition:border-color 0.2s,color 0.2s;display:inline-flex;align-items:center;gap:10px; }
-    .btn-ghost:hover { border-color:var(--accent);color:var(--accent); }
+      .features-list {
+        list-style: none;
+        margin-bottom: 40px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .features-list li {
+        font-size: 0.85rem;
+        color: var(--text);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        line-height: 1.4;
+      }
+      .features-list li::before {
+        content: "✦";
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+      .card.recommended .features-list li::before {
+        color: var(--accent);
+      }
 
-    /* Print */
-    .print-bar {
-      position:fixed;bottom:32px;right:32px;z-index:500;
-      display:flex;gap:12px;
-    }
+      /* Buttons */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 16px 24px;
+        border-radius: 6px;
+        cursor: none;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.2s;
+        width: 100%;
+        text-align: center;
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #0a0a0a;
+        border: none;
+      }
+      .btn-primary:hover {
+        background: #d4ff6e;
+        transform: translateY(-2px);
+      }
 
-    footer { border-top:1px solid var(--border);padding:32px 48px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase; }
+      /* Process Section */
+      .process {
+        margin-bottom: 80px;
+      }
+      .process-title {
+        text-align: center;
+        font-family: var(--serif);
+        font-size: 2.4rem;
+        margin-bottom: 64px;
+      }
+      .process-title em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+      .step-num {
+        font-family: var(--serif);
+        font-size: 3rem;
+        color: var(--border);
+        line-height: 1;
+        margin-bottom: 16px;
+        transition: color 0.3s;
+      }
+      .step:hover .step-num {
+        color: var(--accent);
+      }
+      .step-title {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+      .step-desc {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
 
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-    .reveal { opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease; }
-    .reveal.visible { opacity:1;transform:translateY(0); }
+      /* Details Grid (Inclusos e Pagamento) */
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 120px;
+      }
+      .details-card {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 48px;
+      }
+      .details-title {
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        color: var(--text);
+        margin-bottom: 32px;
+      }
+      .details-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+      }
+      .details-list li {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .details-list li .icon {
+        color: var(--accent);
+        font-size: 1.1rem;
+        line-height: 1;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .details-list li strong {
+        color: var(--text);
+        font-weight: 500;
+      }
 
-    @media print {
-      .cursor,.cursor-follower,.grain,.print-bar,nav { display:none!important; }
-      body { cursor:auto; }
-      main { padding:40px; }
-    }
+      /* CTA Section */
+      .cta-block {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 64px 48px;
+        text-align: center;
+      }
+      .cta-h2 {
+        font-family: var(--serif);
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+      }
+      .cta-h2 em {
+        font-style: italic;
+        color: var(--accent);
+      }
+      .cta-sub {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-bottom: 32px;
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .cta-buttons .btn {
+        width: auto;
+      }
 
-    @media (max-width:600px) {
-      nav { padding:20px 24px; }
-      main { padding:100px 24px 60px; }
-      .info-grid { grid-template-columns:1fr; }
-      .timeline-item { grid-template-columns:40px 1fr; }
-      .timeline-duration { grid-column:2; }
-      .price-hero { flex-direction:column;align-items:flex-start;padding:28px; }
-      .price-hero-right { align-items:flex-start; }
-      .cta-block { padding:32px 24px; }
-      .cta-buttons { flex-direction:column; }
-      footer { flex-direction:column;gap:12px;text-align:center;padding:24px; }
-    }
-  </style>
-</head>
-<body>
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-top: 40px;
+      }
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="follower"></div>
-  <div class="grain"></div>
+      /* Animations */
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  <nav id="nav">
-    <a href="/" class="nav-logo">Carol.</a>
-    <a href="/briefing.html" class="nav-back">← Voltar ao briefing</a>
-  </nav>
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 768px) {
+        nav {
+          padding: 20px 24px;
+        }
+        main {
+          padding: 120px 24px 60px;
+        }
+        .pricing-grid,
+        .process-grid,
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+        .card.recommended {
+          transform: translateY(0);
+        }
+        .card.recommended:hover {
+          transform: translateY(-4px);
+        }
+        .details-card {
+          padding: 32px 24px;
+        }
+        .cta-block {
+          padding: 48px 24px;
+        }
+        .cta-buttons {
+          flex-direction: column;
+        }
+        .cta-buttons .btn {
+          width: 100%;
+        }
+        footer {
+          flex-direction: column;
+          gap: 12px;
+          text-align: center;
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="follower"></div>
+    <div class="grain"></div>
 
-  <main>
-    <div class="proposal-tag">Proposta Personalizada · Carol Gonzaga</div>
-    <h1 class="proposal-h1" id="proposalTitle">Proposta para <em id="clientName">você</em></h1>
-    <p class="proposal-sub" id="proposalSub">Gerada com base nas suas respostas. Confira os detalhes abaixo e me chame para darmos início ao projeto.</p>
+    <nav id="nav">
+      <a href="https://carolgonzaga.site" class="nav-logo"
+        >Carol<span>.</span></a
+      >
+      <a href="https://carolgonzaga.site" class="nav-back">Voltar pra home</a>
+    </nav>
 
-    <!-- Price hero -->
-    <div class="price-hero reveal">
-      <div class="price-hero-left">
-        <div class="price-hero-label">Investimento estimado</div>
-        <div class="price-hero-value" id="heroPrice">—</div>
-        <div class="price-hero-note">Valor base calculado a partir do escopo informado.<br>Pode ser ajustado após análise completa.</div>
+    <main>
+      <div class="hero reveal">
+        <div class="tag">Briefing recebido · Próximo passo</div>
+        <h1 class="hero-h1">
+          Escolha o pacote que faz <em>sentido</em> pra você.
+        </h1>
+        <p class="hero-sub">
+          Esses são os pontos de partida. Vou analisar seu briefing com calma e
+          enviar uma proposta personalizada em até 24h.<br />Os valores podem
+          variar conforme o escopo final.
+        </p>
       </div>
-      <div class="price-hero-right">
-        <div class="price-validity" id="proposalDate">—</div>
-        <div class="price-validity">Proposta válida por 15 dias</div>
-      </div>
-    </div>
 
-    <!-- Client info -->
-    <div class="section-block reveal">
-      <div class="section-block-title">Dados do Cliente</div>
-      <div class="info-grid" id="clientGrid"></div>
-    </div>
+      <div class="pricing-grid">
+        <div class="card reveal" style="transition-delay: 0.1s">
+          <div class="card-top-tag">Conversão direta</div>
+          <h2 class="card-title">Landing Page</h2>
+          <p class="card-desc">Lançamentos, campanhas e captação de leads.</p>
 
-    <!-- Scope -->
-    <div class="section-block reveal">
-      <div class="section-block-title">Escopo do Projeto</div>
-      <table class="scope-table">
-        <thead>
-          <tr>
-            <th>Item</th>
-            <th>Descrição</th>
-            <th style="text-align:right;">Valor</th>
-          </tr>
-        </thead>
-        <tbody id="scopeBody"></tbody>
-        <tfoot id="scopeFoot"></tfoot>
-      </table>
-    </div>
+          <div class="card-price-label">A partir de</div>
+          <div class="card-price">R$ 2.500</div>
+          <div class="card-time">Entrega em 10-15 dias</div>
 
-    <!-- Timeline -->
-    <div class="section-block reveal">
-      <div class="section-block-title">Cronograma Estimado</div>
-      <div class="timeline" id="timeline"></div>
-    </div>
-
-    <!-- What's included -->
-    <div class="section-block reveal">
-      <div class="section-block-title">O que está incluído</div>
-      <div class="terms-list">
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>Design responsivo</strong> — O site funciona perfeitamente em celular, tablet e desktop.</div></div>
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>SEO técnico básico</strong> — Estrutura de código otimizada para mecanismos de busca desde o início.</div></div>
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>2 rodadas de revisão</strong> — Ajustes de design e texto durante o desenvolvimento.</div></div>
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>Deploy e publicação</strong> — Coloco o site no ar e configuro o domínio junto com você.</div></div>
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>Suporte pós-entrega</strong> — 30 dias de suporte para dúvidas e pequenos ajustes após o lançamento.</div></div>
-        <div class="term-item"><div class="term-icon">✦</div><div class="term-text"><strong>Código próprio e documentado</strong> — Você fica com o código-fonte completo do projeto.</div></div>
-      </div>
-    </div>
-
-    <!-- Terms -->
-    <div class="section-block reveal">
-      <div class="section-block-title">Condições de Pagamento</div>
-      <div class="terms-list">
-        <div class="term-item"><div class="term-icon">💳</div><div class="term-text"><strong>Entrada de 50%</strong> para início do projeto, conforme acordado em contrato.</div></div>
-        <div class="term-item"><div class="term-icon">🚀</div><div class="term-text"><strong>50% restantes</strong> na entrega e aprovação final antes do deploy.</div></div>
-        <div class="term-item"><div class="term-icon">📋</div><div class="term-text"><strong>Contrato formal</strong> assinado pelas duas partes antes do início do desenvolvimento.</div></div>
-        <div class="term-item"><div class="term-icon">🔄</div><div class="term-text">Alterações de escopo fora do briefing original podem gerar <strong>aditivos de valor</strong>.</div></div>
-      </div>
-    </div>
-
-    <!-- Project description -->
-    <div class="section-block reveal" id="descSection">
-      <div class="section-block-title">Sobre o Projeto</div>
-      <p style="color:var(--muted);font-size:0.9rem;line-height:1.8;" id="descText"></p>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-block reveal">
-      <h2 class="cta-h2">Pronta para <em>começar?</em></h2>
-      <p class="cta-sub">Entre em contato para alinharmos os detalhes, tirar dúvidas e fechar o contrato.</p>
-      <div class="cta-buttons">
-        <a id="waBtn" href="#" class="btn-primary" target="_blank">
-          Chamar no WhatsApp →
-        </a>
-        <a href="mailto:dev.carolgonzaga@gmail.com" class="btn-ghost">Enviar por e-mail</a>
-        <button class="btn-ghost" onclick="window.print()">Salvar como PDF</button>
-      </div>
-    </div>
-  </main>
-
-  <!-- Print / PDF button -->
-  <div class="print-bar">
-    <button class="btn-ghost" onclick="window.print()" style="font-size:0.6rem;">⬇ Baixar PDF</button>
-  </div>
-
-  <footer>
-    <span>© Carol Gonzaga — Desenvolvedora Web Fullstack</span>
-    <span>Brasil · <span id="footerYear"></span></span>
-  </footer>
-
-  <script>
-    // Cursor
-    const cursor = document.getElementById('cursor');
-    const follower = document.getElementById('follower');
-    let mx=0,my=0,fx=0,fy=0;
-    document.addEventListener('mousemove',e=>{ mx=e.clientX;my=e.clientY; cursor.style.transform=`translate(${mx-5}px,${mx-5}px)`; cursor.style.transform=`translate(${mx-5}px,${my-5}px)`; });
-    (function a(){fx+=(mx-fx)*0.12;fy+=(my-fy)*0.12;follower.style.transform=`translate(${fx-18}px,${fy-18}px)`;requestAnimationFrame(a);})();
-    const nav=document.getElementById('nav');
-    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
-    document.getElementById('footerYear').textContent=new Date().getFullYear();
-
-    // Reveal
-    const obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }),{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-    // ── Read params ───────────────────────────────────────
-    const params = new URLSearchParams(window.location.search);
-    const p = key => params.get(key) || '';
-
-    const nome       = p('nome');
-    const email      = p('email');
-    const whatsapp   = p('whatsapp');
-    const empresa    = p('empresa');
-    const segmento   = p('segmento');
-    const tipo_site  = p('tipo_site');
-    const objetivo   = p('objetivo');
-    const publico    = p('publico');
-    const features   = p('features') ? p('features').split(',').filter(Boolean) : [];
-    const cms        = p('cms');
-    const prazo      = p('prazo');
-    const budget     = p('budget');
-    const descricao  = p('descricao');
-    const extras     = p('extras');
-    const price      = parseFloat(p('price')) || 0;
-    const priceFmt   = p('priceFmt') || '—';
-
-    // ── Labels ────────────────────────────────────────────
-    const TLABELS = {
-      tipo_site: {'landing-page':'Landing Page','institucional':'Site Institucional','ecommerce':'E-commerce','blog':'Blog / Portal','portfolio':'Portfólio','outro':'Projeto especial'},
-      objetivo:  {'captar-leads':'Captação de Leads','vender':'Venda de Produtos','autoridade':'Autoridade de Marca','informar':'Informação / Conteúdo'},
-      prazo:     {'urgente':'Urgente (< 2 semanas)','normal':'Normal (1–2 meses)','tranquilo':'Tranquilo (2+ meses)','flexivel':'Flexível'},
-      budget:    {'ate2k':'Até R$ 2.000','2k-5k':'R$ 2.000 – 5.000','5k-10k':'R$ 5.000 – 10.000','acima10k':'Acima de R$ 10.000'},
-      cms:       {'sim':'Sim','nao':'Não'},
-      features:  {'formulario':'Formulário de contato','whatsapp_btn':'Botão WhatsApp','blog_cms':'Blog/CMS','agendamento':'Agendamento online','pagamento':'Gateway de pagamento','login_area':'Área de membros','multilingue':'Multilíngue','seo':'SEO técnico avançado','analytics':'Analytics e tracking','chat':'Chat ao vivo'},
-    };
-
-    // ── Pricing breakdown ─────────────────────────────────
-    const BASE = {'landing-page':2500,'institucional':5000,'ecommerce':9000,'blog':4500,'portfolio':3000,'outro':3500};
-    const FEAT_PRICE = {'formulario':0,'whatsapp_btn':0,'blog_cms':1500,'agendamento':2000,'pagamento':2500,'login_area':3000,'multilingue':2000,'seo':800,'analytics':500,'chat':1000};
-    const URGENCY = {'urgente':1.3,'normal':1.0,'tranquilo':0.95,'flexivel':0.9};
-    const CMS_ADD = {'sim':1500,'nao':0};
-
-    const baseVal    = BASE[tipo_site] || 3000;
-    const urgMult    = URGENCY[prazo] || 1.0;
-    const cmsVal     = CMS_ADD[cms] || 0;
-    const featTotal  = features.reduce((s,f)=>(s+(FEAT_PRICE[f]||0)),0);
-
-    const fmt = v => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0}).format(v);
-    const fmtFinal = priceFmt || fmt(price);
-
-    // ── Populate page ─────────────────────────────────────
-    document.getElementById('clientName').textContent = empresa || nome || 'você';
-    document.getElementById('proposalTitle').innerHTML = `Proposta para <em>${empresa || nome || 'você'}</em>`;
-    document.getElementById('proposalSub').textContent = `Gerada em ${new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'})} com base no seu briefing. Confira os detalhes e me chame para darmos início.`;
-    document.getElementById('heroPrice').textContent = fmtFinal;
-    document.getElementById('proposalDate').textContent = `Gerada em ${new Date().toLocaleDateString('pt-BR')}`;
-
-    // Client info grid
-    const clientData = [
-      ['Nome',nome],['E-mail',email],
-      ['WhatsApp',whatsapp],['Empresa',empresa||'—'],
-      ['Segmento',segmento],['Objetivo',TLABELS.objetivo[objetivo]||objetivo],
-    ];
-    document.getElementById('clientGrid').innerHTML = clientData.map(([k,v])=>`
-      <div class="info-cell">
-        <div class="info-cell-label">${k}</div>
-        <div class="info-cell-value">${v||'—'}</div>
-      </div>`).join('');
-
-    // Scope table
-    const scopeItems = [
-      { item: `${TLABELS.tipo_site[tipo_site]||'Site'}`, desc: 'Desenvolvimento base com design personalizado, responsivo e otimizado', val: baseVal * urgMult },
-    ];
-    if (cmsVal > 0) scopeItems.push({ item:'Painel de Edição (CMS)', desc:'Sistema para você editar conteúdo sem precisar de desenvolvedor', val: cmsVal });
-    features.forEach(f => {
-      if ((FEAT_PRICE[f]||0) > 0)
-        scopeItems.push({ item: TLABELS.features[f]||f, desc:'Funcionalidade adicional conforme briefing', val: FEAT_PRICE[f] });
-    });
-    if (urgMult !== 1.0 && prazo === 'urgente') scopeItems.push({ item:'Adicional de urgência (30%)', desc:'Projeto com prazo acelerado', val: baseVal * 0.3 });
-
-    const totalCalc = scopeItems.reduce((s,i)=>s+i.val,0);
-    document.getElementById('scopeBody').innerHTML = scopeItems.map(i=>`
-      <tr>
-        <td><strong>${i.item}</strong></td>
-        <td style="color:var(--muted)">${i.desc}</td>
-        <td>${fmt(Math.round(i.val/100)*100)}</td>
-      </tr>`).join('');
-    document.getElementById('scopeFoot').innerHTML = `
-      <tr class="scope-total">
-        <td colspan="2" style="font-family:var(--mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Total estimado</td>
-        <td style="font-size:1.1rem;font-family:var(--serif);color:var(--accent);">${fmtFinal}</td>
-      </tr>`;
-
-    // Timeline
-    const timelines = {
-      'landing-page': [
-        {ph:'01', title:'Descoberta & Briefing', desc:'Alinhamento de objetivos, referências visuais e definição do escopo', dur:'2–3 dias'},
-        {ph:'02', title:'Design & Prototipagem', desc:'Wireframe e protótipo para aprovação visual antes do código', dur:'3–5 dias'},
-        {ph:'03', title:'Desenvolvimento', desc:'Codificação responsiva, otimizações e integrações necessárias', dur:'5–8 dias'},
-        {ph:'04', title:'Revisões & Ajustes', desc:'2 rodadas de ajustes com base no seu feedback', dur:'2–3 dias'},
-        {ph:'05', title:'Deploy & Entrega', desc:'Publicação do site, configuração de domínio e documentação', dur:'1–2 dias'},
-      ],
-      'institucional': [
-        {ph:'01', title:'Descoberta & Briefing', desc:'Alinhamento de objetivos, públicos e estrutura de páginas', dur:'3–5 dias'},
-        {ph:'02', title:'Arquitetura & Design', desc:'Sitemap, wireframes e identidade visual das páginas', dur:'5–8 dias'},
-        {ph:'03', title:'Desenvolvimento', desc:'Codificação de todas as páginas com foco em performance e SEO', dur:'10–15 dias'},
-        {ph:'04', title:'Revisões & Ajustes', desc:'2 rodadas de ajustes com base no seu feedback', dur:'3–5 dias'},
-        {ph:'05', title:'Deploy & Entrega', desc:'Publicação, configuração e treinamento de uso', dur:'2–3 dias'},
-      ],
-      'ecommerce': [
-        {ph:'01', title:'Descoberta & Planejamento', desc:'Levantamento de produtos, fluxo de compra e integrações necessárias', dur:'5–7 dias'},
-        {ph:'02', title:'Design', desc:'Identidade visual, layout da loja e experiência de compra', dur:'7–10 dias'},
-        {ph:'03', title:'Desenvolvimento', desc:'Catálogo, carrinho, checkout e integrações de pagamento/estoque', dur:'15–25 dias'},
-        {ph:'04', title:'Testes & QA', desc:'Testes de compra, responsividade e segurança', dur:'5–7 dias'},
-        {ph:'05', title:'Deploy & Entrega', desc:'Lançamento, treinamento e documentação completa', dur:'3–5 dias'},
-      ],
-    };
-
-    const tl = timelines[tipo_site] || timelines['institucional'];
-    document.getElementById('timeline').innerHTML = tl.map(t=>`
-      <div class="timeline-item">
-        <div class="timeline-phase">${t.ph}</div>
-        <div>
-          <div class="timeline-title">${t.title}</div>
-          <div class="timeline-desc">${t.desc}</div>
+          <ul class="features-list">
+            <li>Página única otimizada pra conversão</li>
+            <li>Design responsivo (mobile-first)</li>
+            <li>Formulário de contato + WhatsApp</li>
+            <li>SEO técnico básico</li>
+            <li>Hospedagem por 1 ano inclusa</li>
+            <li>1 rodada de revisão</li>
+          </ul>
+          <a href="#" class="btn btn-ghost wa-link" data-pacote="Landing Page"
+            >Quero esse pacote</a
+          >
         </div>
-        <div class="timeline-duration">${t.dur}</div>
-      </div>`).join('');
 
-    // Description
-    if (descricao) {
-      document.getElementById('descText').textContent = descricao;
-    } else {
-      document.getElementById('descSection').style.display = 'none';
-    }
+        <div class="card recommended reveal" style="transition-delay: 0.2s">
+          <div class="badge">Recomendado</div>
+          <div class="card-top-tag">Mais escolhido ✦</div>
+          <h2 class="card-title">Site Institucional</h2>
+          <p class="card-desc">
+            Empresas e profissionais que precisam de presença digital sólida.
+          </p>
 
-    // WhatsApp CTA
-    const waTxt = encodeURIComponent(`Olá Carol! Recebi minha proposta de orçamento e gostaria de conversar sobre o projeto.\n\nNome: ${nome}\nProjeto: ${TLABELS.tipo_site[tipo_site]||tipo_site}\nInvestimento estimado: ${fmtFinal}`);
-    document.getElementById('waBtn').href = `https://wa.me/5511912986866?text=${waTxt}`;
-  </script>
-</body>
+          <div class="card-price-label">A partir de</div>
+          <div class="card-price">R$ 4.800</div>
+          <div class="card-time">Entrega em 20-30 dias</div>
+
+          <ul class="features-list">
+            <li>
+              Até 6 páginas (Home, Sobre, Serviços, Portfólio, Blog, Contato)
+            </li>
+            <li>Design exclusivo do zero</li>
+            <li>Painel pra editar conteúdo (CMS)</li>
+            <li>SEO técnico avançado + Analytics</li>
+            <li>Integração com redes sociais</li>
+            <li>Hospedagem + domínio por 1 ano</li>
+            <li>2 rodadas de revisão</li>
+            <li>30 dias de suporte pós-entrega</li>
+          </ul>
+          <a
+            href="#"
+            class="btn btn-primary wa-link"
+            data-pacote="Site Institucional"
+            >Quero esse pacote</a
+          >
+        </div>
+
+        <div class="card reveal" style="transition-delay: 0.3s">
+          <div class="card-top-tag">Loja completa</div>
+          <h2 class="card-title">E-commerce</h2>
+          <p class="card-desc">
+            Quem quer vender online com gestão simples e escalável.
+          </p>
+
+          <div class="card-price-label">A partir de</div>
+          <div class="card-price">R$ 7.900</div>
+          <div class="card-time">Entrega em 30-45 dias</div>
+
+          <ul class="features-list">
+            <li>Loja virtual completa (Shopify ou customizada)</li>
+            <li>Catálogo com até 50 produtos cadastrados</li>
+            <li>Gateway de pagamento integrado</li>
+            <li>Cálculo de frete automático</li>
+            <li>Painel administrativo intuitivo</li>
+            <li>Integração com estoque e CRM</li>
+            <li>Treinamento em vídeo (2h)</li>
+            <li>60 dias de suporte pós-entrega</li>
+          </ul>
+          <a href="#" class="btn btn-ghost wa-link" data-pacote="E-commerce"
+            >Quero esse pacote</a
+          >
+        </div>
+      </div>
+
+      <div class="process reveal">
+        <h2 class="process-title">Como funciona <em>daqui pra frente?</em></h2>
+        <div class="process-grid">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Análise do briefing</h3>
+            <p class="step-desc">
+              Em até 24h envio uma proposta detalhada com escopo, prazo e valor
+              final.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Conversa & ajustes</h3>
+            <p class="step-desc">
+              Agendamos uma call sem compromisso pra alinhar expectativas e
+              ajustar o que precisar.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Aprovação & início</h3>
+            <p class="step-desc">
+              Com tudo certo, assinamos contrato e começamos a desenhar seu
+              projeto.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="details-grid reveal">
+        <div class="details-card">
+          <h3 class="details-title">O que está incluído</h3>
+          <ul class="details-list">
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>Design responsivo</strong> — O site funciona
+                perfeitamente em celular, tablet e desktop.
+              </div>
+            </li>
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>SEO técnico básico</strong> — Estrutura de código
+                otimizada para mecanismos de busca desde o início.
+              </div>
+            </li>
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>2 rodadas de revisão</strong> — Ajustes de design e
+                texto durante o desenvolvimento.
+              </div>
+            </li>
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>Deploy e publicação</strong> — Coloco o site no ar e
+                configuro o domínio junto com você.
+              </div>
+            </li>
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>Suporte pós-entrega</strong> — 30 dias de suporte para
+                dúvidas e pequenos ajustes após o lançamento.
+              </div>
+            </li>
+            <li>
+              <span class="icon">✦</span>
+              <div>
+                <strong>Código próprio e documentado</strong> — Você fica com o
+                código-fonte completo do projeto.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="details-card">
+          <h3 class="details-title">Condições de Pagamento</h3>
+          <ul class="details-list">
+            <li>
+              <span class="icon">💳</span>
+              <div>
+                <strong>Entrada de 50%</strong> para início do projeto, conforme
+                acordado em contrato.
+              </div>
+            </li>
+            <li>
+              <span class="icon">🚀</span>
+              <div>
+                <strong>50% restantes</strong> na entrega e aprovação final
+                antes do deploy.
+              </div>
+            </li>
+            <li>
+              <span class="icon">📋</span>
+              <div>
+                <strong>Contrato formal</strong> assinado pelas duas partes
+                antes do início do desenvolvimento.
+              </div>
+            </li>
+            <li>
+              <span class="icon">🔄</span>
+              <div>
+                Alterações de escopo fora do briefing original podem gerar
+                <strong>aditivos de valor</strong>.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-block reveal">
+        <h2 class="cta-h2">Ficou com <em>dúvida?</em></h2>
+        <p class="cta-sub">
+          Me chama no WhatsApp que conversamos sobre o que faz mais sentido pro
+          seu caso.
+        </p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary wa-link" data-pacote="Dúvida Geral"
+            >💬 Falar no WhatsApp</a
+          >
+          <a href="https://carolgonzaga.site" class="btn btn-ghost"
+            >Voltar pra home</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span
+        >© <span id="footerYear"></span> Carol Gonzaga · Desenvolvedora Web
+        Fullstack</span
+      >
+    </footer>
+
+    <script>
+      // ── Cursor ──────────────────────────────────────────
+      const cursor = document.getElementById("cursor");
+      const follower = document.getElementById("follower");
+      let mx = 0,
+        my = 0,
+        fx = 0,
+        fy = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.transform = `translate(${mx - 5}px,${my - 5}px)`;
+      });
+
+      document.addEventListener("mouseover", (e) => {
+        const h = !!e.target.closest(
+          "a, button, input, textarea, label, select, [role=button]",
+        );
+        cursor.classList.toggle("hovering", h);
+        follower.classList.toggle("hovering", h);
+      });
+
+      (function tick() {
+        fx += (mx - fx) * 0.12;
+        fy += (my - fy) * 0.12;
+        follower.style.transform = `translate(${fx - 18}px,${fy - 18}px)`;
+        requestAnimationFrame(tick);
+      })();
+
+      // ── Navbar & Utils ──────────────────────────────────
+      const nav = document.getElementById("nav");
+      window.addEventListener("scroll", () =>
+        nav.classList.toggle("scrolled", window.scrollY > 40),
+      );
+      document.getElementById("footerYear").textContent =
+        new Date().getFullYear();
+
+      // ── Reveal Animation ────────────────────────────────
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+
+      // ── WhatsApp Dynamic Links ──────────────────────────
+      const CAROL_WA = "5511912986866";
+
+      // Pega o nome do cliente da URL, se existir (ex: ?nome=Ana)
+      const params = new URLSearchParams(window.location.search);
+      const nomeCliente = params.get("nome") || "";
+
+      // Configura todos os botões de WhatsApp da página
+      document.querySelectorAll(".wa-link").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const pacote = btn.getAttribute("data-pacote");
+
+          let saudacao = nomeCliente
+            ? `Olá Carol! Sou eu, ${nomeCliente.split(" ")[0]}.`
+            : "Olá Carol!";
+          let mensagem = "";
+
+          if (pacote === "Dúvida Geral") {
+            mensagem = `${saudacao} Acabei de preencher o briefing, mas fiquei com algumas dúvidas e queria bater um papo.`;
+          } else {
+            mensagem = `${saudacao} Acabei de preencher o briefing e achei que o pacote *${pacote}* é o que faz mais sentido pra mim! Podemos conversar?`;
+          }
+
+          const url = `https://wa.me/${CAROL_WA}?text=${encodeURIComponent(mensagem)}`;
+          window.open(url, "_blank");
+        });
+      });
+    </script>
+  </body>
 </html>
