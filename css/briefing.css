@@ -726,11 +726,13 @@ textarea {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
+
 @media (max-width: 600px) {
   .check-grid {
     grid-template-columns: 1fr;
   }
 }
+
 .check-item {
   display: flex;
   align-items: flex-start;
@@ -752,7 +754,19 @@ textarea {
   background: rgba(200, 245, 100, 0.04);
 }
 .check-item input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.check-item {
+  position: relative;
+}
+.check-box,
+.check-text {
+  pointer-events: none;
 }
 .check-box {
   width: 16px;
