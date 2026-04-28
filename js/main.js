@@ -244,3 +244,26 @@ document.querySelectorAll(".portfolio-item").forEach((item) => {
     openLightbox(img.src, img.alt);
   });
 });
+
+// =========================================
+// FAQ (abrir/fechar)
+// =========================================
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const answer = btn.nextElementSibling;
+
+    // Fecha outros (opcional - comportamento tipo accordion)
+    document.querySelectorAll(".faq-answer").forEach((item) => {
+      if (item !== answer) {
+        item.style.maxHeight = null;
+      }
+    });
+
+    // Toggle
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
