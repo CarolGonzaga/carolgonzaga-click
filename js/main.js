@@ -237,10 +237,13 @@ function closeLightbox() {
 // Inicializa lightbox nos itens do portfólio com imagens reais
 document.querySelectorAll(".portfolio-item").forEach((item) => {
   const img = item.querySelector("img");
-  if (!img) return; // Só ativa se houver imagem real
+  if (!img) return;
 
   item.style.cursor = "zoom-in";
-  item.addEventListener("click", () => {
+  item.addEventListener("click", (e) => {
+    // Se o clique foi no botão "Ver projeto", não abre o lightbox
+    if (e.target.closest(".btn-ghost")) return;
+
     openLightbox(img.src, img.alt);
   });
 });
