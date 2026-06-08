@@ -1609,6 +1609,14 @@ footer {
   .incluso-grid { grid-template-columns: 1fr; }
   .incluso-header { text-align: center; }
   .incluso-sub { margin: 0 auto; }
+  .incluso-card--price {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .incluso-card--price .btn-primary {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 /* Responsive portfolio pf-* */
