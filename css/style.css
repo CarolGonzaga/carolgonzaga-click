@@ -1617,10 +1617,11 @@ footer {
 }
 @media (max-width: 900px) {
   .portfolio-grid { grid-template-columns: 1fr !important; }
-  .portfolio-item { grid-column: span 1 !important; min-height: 280px !important; }
+  .portfolio-item { grid-column: span 1 !important; min-height: 400px !important; }
+  .pf-cat-tag { top: 16px !important; left: 24px !important; }
   .pf-big-num { font-size: 64px !important; }
   .pf-deco-icon { font-size: 48px !important; }
-  .pf-overlay-always { padding: 24px !important; }
+  .pf-overlay-always { padding: 56px 24px 24px !important; }
 }
 
 
