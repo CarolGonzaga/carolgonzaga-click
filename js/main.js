@@ -46,7 +46,7 @@ const observer = new IntersectionObserver(
 );
 document
   .querySelectorAll(
-    ".about-grid, .services-grid, .process-list, .stats-grid, .stack-scroll, .contact-h2, .contact-sub, .contact-links, .portfolio-header, .portfolio-grid, #openModalBtn",
+    ".about-grid, .services-grid, .incluso-grid, .process-list, .stats-grid, .stack-scroll, .contact-h2, .contact-sub, .contact-links, .portfolio-header, .portfolio-grid, #openModalBtn",
   )
   .forEach((el) => {
     el.classList.add("reveal");
